@@ -1,0 +1,117 @@
+/* body {
+  font-size: 20px;
+}
+body,
+div {
+  margin: 0;
+  padding: 0;
+  background: #ffef5e;
+}
+.border {
+  border: 1px solid #152131;
+}
+.main {
+  position: relative;
+  width: 700px;
+  margin: 50px auto;
+}
+.wanzi {
+  position: absolute;
+  top: 250px;
+  left: 100px;
+  z-index: 10;
+}
+.wanzi .hairs {
+  background: #152131;
+  width: 190px;
+  height: 250px;
+  left: -30px;
+  top: -50px;
+  position: absolute;
+  border-radius: 50% 50% 0 0;
+  overflow: hidden;
+}
+.wanzi .hairs:before {
+  content: 'before';
+}
+.wanzi .hairs:after {
+  content: 'after 元素结束之前';
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  top: 120px;
+  background: #ffef5e;
+}
+.wanzi .hairs .hair {
+  width: 35px;
+  height: 45px;
+  background: #152131;
+  position: absolute;
+  z-index: 1;
+  transform: rotate(70deg) scale(1) skew(44deg) translate(8px);
+}
+.wanzi .hairs .hair.hair1 {
+  top: 17px;
+  left: 27px;
+}
+.wanzi .hairs .hair.hair2 {
+  top: 8px;
+  left: 52px;
+}
+.wanzi .hairs .hair.hair3 {
+  top: 4px;
+  left: 73px;
+}
+.wanzi .hairs .hair.hair4 {
+  top: 0;
+  left: 90px;
+}
+.wanzi .hairs .hair.hair5 {
+  top: 4px;
+  left: 108px;
+}
+.wanzi .hairs .hair.hair6 {
+  top: 8px;
+  left: 125px;
+}
+.wanzi .hairs .hair.hair7 {
+  top: 17px;
+  right: 17px;
+}
+.wanzi .face {
+  background: #fbdac7;
+  width: 130px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  border-radius: 20px 20px 50px 50px;
+}
+.wanzi .face .brow,
+.wanzi .face widows 42px,
+.wanzi .face height 10px,
+.wanzi .face background:base-color,
+.wanzi .face position absolute,
+.wanzi .face top 20px,
+.wanzi .face border-radius: 50%,
+.wanzi .face.left-brow {
+  left: 18px;
+  transform: rotate(-10deg);
+}
+.wanzi .face.right-brow {
+  right: 14px;
+  transform: rotate(10deg);
+}
+.wanzi .face .eye,
+.wanzi .face width: 14px,
+.wanzi .face height: 14px,
+.wanzi .face border-radius: 50%,
+.wanzi .face background: #000000,
+.wanzi .face top: 40px,
+.wanzi .face z-index: 2,
+.wanzi .face.left-eye {
+  left: 32%;
+}
+.wanzi .faceright-eye {
+  right: 32%;
+} */
+

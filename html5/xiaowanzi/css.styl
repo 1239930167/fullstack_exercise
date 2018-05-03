@@ -1,0 +1,126 @@
+base-color = #152131
+
+body
+  font-size 20px
+
+body, div
+  margin 0
+  padding 0
+  background #ffef5e
+
+.border
+  border 1px solid base-color
+
+.main
+  position relative
+  width 700px
+  margin 50px auto
+
+.wanzi
+  position absolute
+  top 250px
+  left 100px
+  z-index 10
+
+  .hairs
+    background base-color
+    width 190px
+    height 250px
+    left -30px
+    top -50px
+    position absolute
+    border-radius 50% 50% 0 0
+    overflow hidden
+
+    &:before
+      content: 'before'
+    &:after
+      content: 'after 元素结束之前'
+      position absolute
+      width 300px 
+      height 200px
+      top 120px
+      background: #ffef5e
+    
+
+    .hair 
+      width 35px
+      height 45px
+      background base-color
+      position absolute
+      z-index 1
+      transform: rotate(70deg) scale(1) skew(44deg) translate(8px)
+
+      &.hair1
+        top 17px
+        left 27px
+      &.hair2
+        top 8px
+        left 52px
+      &.hair3
+        top 4px
+        left 73px
+      &.hair4
+        top 0
+        left 90px
+      &.hair5
+        top 4px
+        left 108px
+      &.hair6
+        top 8px
+        left 125px
+      &.hair7
+        top 17px
+        right 17px
+
+  .face
+    background #fbdac7
+    width 130px
+    height 100px
+    position absolute
+    top 0
+    border-radius 20px 20px 50px 50px
+
+    .brow
+    width:  42px
+    height 10px
+    background:base-color
+    position absolute
+    top 20px
+    border-radius: 50%
+
+    &.left-brow 
+      left 18px
+      transform: rotate(-10deg)
+    &.right-brow
+        right 14px
+        transform: rotate(10deg)
+    .eye 
+    width:  14px
+    height: 14px
+    border-radius: 50%
+    background: #000000
+    top: 40px
+    z-index: 2
+
+    &.left-eye
+      left 32%
+    &right-eye
+      right 32%
+
+    .blusher
+      widows 12px
+      height 12px
+      border-radius: 25%
+      background: #f79c99
+      position: absolute
+      text-outline 70px
+      &.left-blusher
+        left 8px
+      &.right-blusher
+        right 8px
+
+    .mouth
+    
+
+
