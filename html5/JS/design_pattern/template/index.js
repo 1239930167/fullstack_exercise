@@ -150,12 +150,14 @@ var Beverage = function(param) {
     var addCondiments = param.addCondiments || function() {
       throw new Error('必须传递addCondiments方法');
     }
+    var eat=param.ate();
     var F = function() {};
     F.prototype.init = function() {
       boilWater();
       brew();
       pourInCup();
       addCondiments();
+      eat();
     }
     return F;
   }
@@ -169,6 +171,10 @@ var Beverage = function(param) {
     },
     addCondiments: function() {
       console.log('加糖和牛奶');
+    },
+    ate:function(){
+      console.log('随便');
+      
     }
   });
   var coffee = new Coffee();

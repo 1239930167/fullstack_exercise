@@ -12,6 +12,13 @@
 
 " alt="" />
   <script>
+
+    // ！自己的理解：先在立即执行函数里定义function $,再在$里声明function Eventwrapper，再定义Eventwrapper.prototype，其中用typeof判定传来的参是function还是string
+    // 再用相应方法执行
+    // 或者用querySelector来根据传参查找是否是合法元素类型否则throw Error
+
+
+
   // $ jQuery window 唯一的命名空间
   // $()  $ => function  callback
   // function() {}   参数
