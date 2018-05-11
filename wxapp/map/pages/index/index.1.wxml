@@ -1,0 +1,4 @@
+<view class="container">
+组件
+<map id="ofoMap" latitude="39.914769" longitude="116.404556" scale="16"/>
+</view>
