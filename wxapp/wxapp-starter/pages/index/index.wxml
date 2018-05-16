@@ -1,0 +1,3 @@
+<!-- 有组件在多个页面都会共享， -->
+<import src="/templates/spinner.wxml"/>
+<template is="spinner" data="{{isLoading}}"/>
