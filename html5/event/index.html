@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+        }
+
+        .container {
+            /* display: flex;    */
+            /* 不生效 */
+            height: 369.5px;
+            background: #f3f3f3;
+            vertical-align: middle;
+
+
+        }
+
+        .row {}
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .pic {
+
+            overflow: hidden;
+        }
+
+        .detail {}
+
+        .map {
+            padding-bottom: 10px;
+            height: 371px;
+        }
+
+        .row>div {
+            height: 500px;
+
+        }
+
+        .desc {}
+
+        .signUp {
+            background-color: #479765;
+            height: 57.5px;
+            width: 133.5px;
+            border-radius: 10px;
+            color: white;
+            margin-right: 19px;
+            margin-top: 32.5px;
+        }
+
+        .g_color {
+            color: #4c9a69;
+        }
+    </style>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 ">
+                <img class="pic" src="./asset/a686c9177f3e670906709b9838c79f3df8dc5561.jpg" alt="">
+            </div>
+            <div class="col-md-4 detail">
+                <div class="desc">
+                    <p class="start_time">开始时间：2018-08-22 13:00 周三</p>
+                    <p class="end_time">结束时间：2018-08-22 17:00 周三</p>
+                    <p class="place"> 举办地点：
+                        <span class="g_color">深圳市深圳市南山区桂庙路北瑞峰大厦瑞峰创业中心</span>
+                    </p>
+                    <p class="host">主办方：
+                        <span class="g_color">光环</span>
+                    </p>
+                    <p class="stop_time">
+                        <span>报名截止：</span>
+                        <span>85</span>天
+                        <span>16</span>时
+                        <span>08</span>分
+                        <span>04</span>秒</p>
+
+                    <button class="signUp">立即报名</button>
+                    <span class="more">
+                        活动即将开始
+                    </span>
+                </div>
+
+            </div>
+            <div class="col-md-3 map">
+                <img src="./asset/1.png" alt="" class="littlemap">
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

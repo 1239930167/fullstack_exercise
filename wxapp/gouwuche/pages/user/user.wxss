@@ -1,0 +1,12 @@
+/* pages/user/user.wxss */
+.header{
+    background: #ab956d;
+    position: relative;
+    line-height: 100rpx;
+    height: 160rpx;
+    padding: 30rpx 30rpx 30rpx 150rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    color: #fff;
+    
+}

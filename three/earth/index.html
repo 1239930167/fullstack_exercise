@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>three.js canvas -geometry -earth</title>
+    
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    <div id="webglcanvas"></div>
+    <!-- 放在后面，因为会阻塞HTML下载 -->
+    <!-- 相对路径 -->
+        <script src="./libs/three.min.js">
+        </script>
+        <script src="./libs/stats.min.js"></script>
+        <script>
+        // 舞台scene
+        // 灯光 light 
+        // 相机 camera 
+        // 元素 mesh 
+        // 按帧刷新 requestAnimationFrame
+        // render 渲染到canvas
+        const container=document.querySelector('#container');
+        let canvas,stats,
+        camera,scene,renderer,group;
+        let mouseX=0,mouseY=0;
+        let windoHalfX=window.innerWidth/2;
+        let windoHalfY=window.innerHeight/2;
+        // console.log(windoHalfX,windoHalfY);
+        function init(){
+            window.addEventListener('resize',onWindowResize,false);
+        }
+        function onWindowResize(){
+            windoHalfX=window.innerWidth/2;
+            windoHalfY=window.innerHeight/2;
+            console.log(windoHalfX,windoHalfY);
+        }
+        window.onload=function(){
+            init();
+        }
+
+        
+        </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+            (function(w){
+                let s=w.document;
+                let r=s.documentElement;
+                let colWidth=r.clientWidth/10;
+                r.style.fontSize=colWidth+'px';
+                console.log(colWidth)
+        
+            })(window)
+            
+            </script>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html,body{
+        /* overflow: hidden; */
+        height: 100vh;
+        background: #292d2e;
+    }
+    .container{
+        width: 10rem;
+        height: 100vh;
+        border: 1px solid red;
+        overflow: hidden;
+        /* text-align: center; */
+    }
+    .hd{
+        width: 10rem;
+        /* margin-left: 50%; */
+        height: 50vh;
+        /* height: 50%; */
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .show{
+        margin-top: 2.61rem;
+        width: 7.58rem;
+        height: 1.8rem; 
+        margin-left: 1.2rem;
+        border: 1px solid #4c4e4f;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+    }
+    .show_avt{
+        width: 1.41rem;
+        height: 1.41rem;
+        margin-left: 0.28rem;
+        margin-right: 0.28rem;
+        border: 1px solid white;
+    }
+    .show_text{
+        color: white;
+        font-size: 0.406px;
+        /* text-align:  */
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hd">
+            <img src="./img/hand.png" alt="">
+        </div>
+        <div class="show">
+            <img src="./img/1.jpg" alt="" class="show_avt">
+            <p class="show_text">摇晃结果<br>恭喜你摇到了本帅哥</p>
+        </div>
+        
+    </div>
+    <script>
+        // if(window.DeviceMotionEvent){
+        //     window.addEventListener('devicemotion',shake,false);
+        // }
+        // else{
+        //     alert('本设备不支持摇一摇功能');
+        // }
+        // function shake(eventDate){
+        //     var acceleration=evnetDate.accelerationincludingGravity;
+        //     alert(eventDate)
+        // }
+    </script>
+</body>
+</html>

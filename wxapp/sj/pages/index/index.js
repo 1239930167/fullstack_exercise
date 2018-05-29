@@ -74,7 +74,7 @@ Page({
   readMore(event){
     // id?
     const id=event.target.dataset.id;
-    // console.log(event)
+    console.log(id)
     wx.navigateTo({
       url:`/pages/vehicies/show?id=${id}`
     })

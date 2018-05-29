@@ -1,0 +1,92 @@
+/* css reset */
+/* 用* 性能不好 */
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video
+{
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font:inherit;
+
+}
+dl,ol,ul{
+    margin: 0;
+    padding: 0;
+
+}
+html{
+    font-size: 10px !important;
+    font-size: 62.5%;
+
+}
+body{
+    margin: 0;
+    background-color: #fbfbfb;
+}
+body{
+    font-family: Helvetica,Arial,Roboto,PingFang SC,Microsoft Yahei,Hiragino Sans GB,sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+#db-global-nav{
+    height: 28px;
+    color: #d5d5d5;
+    background: #545652;
+    min-width: 950px;
+    font: 12px Helvetica,Arial,sans-serif;
+    line-height:1.62;
+    font-size: 12px;
+}
+/* inline-block有缺陷
+解决了行内块级的问题，但在元素间会莫名产生一点像素的间距，影响算像素
+两种解决方案 删除元素间的换行 
+父元素fontsize 0
+子元素重新设定fontsize
+*/
+#db-global-nav .global-nav-items{
+    font-size: 0;
+}
+#db-global-nav ul{
+    margin:0;
+    padding: 0;
+}
+dl,ol,ul{
+    list-style: none;
+}
+#db-global-nav .global-nav-items li{
+    display: inline-block;
+    zoom: 1;
+    line-height: 28px;
+    font-size: 12px;
+    vertical-align: baseline;
+}
+#db-global-nav .global-nav-items a{
+    display: inline-block;
+    zoom:1;
+    padding: 0 12px;
+    height: 28px;
+}
+#db-global-nav a:link,#db-global-nav a:visited,#db-global-nav a:hover,#db-global-nav a:active
+{
+    color: #d5d5d5;    
+}
+#db-global-nav a{
+    cursor: pointer;
+    text-decoration: none;
+
+}
+a, a:active, a:hover, a:link, a:visited
+{
+    color: #5c5c5c;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+a,input{
+    cursor: pointer;
+    text-decoration: none;
+}

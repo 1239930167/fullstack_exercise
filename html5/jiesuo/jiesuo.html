@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="jiesuo.css">
+    <script>
+            // 适配问题 不同的手机1rem 单位是 宽度10分之1
+            // 1rem = html fontsize
+        (function(w){
+            // window 是js 全局 dom document 只是其中一部分
+            // 导航location.href　  navigator lbs 经纬度
+            // 陀螺仪 储存localstorage
+            let s = w.document;
+            // 找到html元素
+            let r = s.documentElement;
+            // 宽度的十分之一
+            let colWidth = r.clientWidth/10;
+    
+            console.log(colWidth);
+            r.style.fontSize = colWidth + 'px';
+            
+        })(window)
+        </script>
+    
+</head>
+<body>
+    <div class="hd">
+        <div class="text">输入密码</div>
+    </div>
+    <div class="mima">
+        <div class="box">
+            <a href="#">1</a>
+            
+        </div>
+            <div class="box">
+                    <a href="#">2</a>
+        
+        </div>
+        <div class="box">
+                <a href="#">3</a>
+            
+        </div>
+        <div class="box">
+                <a href="#">4</a>
+            
+        </div>
+        <div class="box">
+                <a href="#">5</a>
+            
+        </div>
+        <div class="box">
+                <a href="#">6</a>
+            
+        </div>
+        <div class="box">
+                <a href="#">7</a>
+            
+        </div>
+       
+        <div class="box">
+                <a href="#">8</a>
+            
+        </div>
+        <div class="box">
+                <a href="#">9</a>
+            
+        </div>
+        <div class="last">
+                <a href="#">0</a>
+            
+        </div>
+        
+    </div>
+    <div class="hujiao">
+紧急呼叫
+    </div>
+    <div class="quxiao">
+取消
+    </div>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .w {
+            position: relative;
+            z-index: 11;
+            height: 140px;
+        }
+
+        .o2_mini .w {
+            width: 990px;
+        }
+
+        .w {
+            margin: auto;
+            width: 1190px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .search-m {
+            position: relative;
+            z-index: 1;
+            height: 60px;
+        }
+
+        .search-m .search_logo {
+            display: none;
+        }
+
+        a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        element.style {
+            display: none;
+        }
+
+        #shelper {
+            overflow: hidden;
+            position: absolute;
+            z-index: 1;
+            left: 270px;
+            top: 59px;
+            width: 398px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
+            -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
+            box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
+        }
+
+        element.style {
+            display: none;
+        }
+
+        #shelper {
+            overflow: hidden;
+            position: absolute;
+            z-index: 1;
+            left: 270px;
+            top: 59px;
+            width: 398px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
+            -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
+            box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
+        }
+
+        .o2_mini .search-m .form {
+            left: 270px;
+            width: 400px;
+        }
+
+        .search-m .form {
+            position: absolute;
+            left: 320px;
+            top: 25px;
+            width: 550px;
+            height: 35px;
+        }
+
+        element.style {
+            color: rgb(153, 153, 153);
+        }
+
+        .o2_mini .search-m .text {
+            width: 300px;
+        }
+
+        .search-m .text {
+            left: 0;
+            padding: 4px 44px 4px 4px;
+            width: 450px;
+            height: 25px;
+            border: 1px solid transparent;
+            line-height: 25px;
+            font-size: 14px;
+            color: #989898;
+        }
+
+        .search-m .button,
+        .search-m .text {
+            position: absolute;
+            top: 0;
+            outline: none;
+        }
+
+        button,
+        input {
+            font-family: Microsoft YaHei, tahoma, arial, Hiragino Sans GB, \\5b8b\4f53, sans-serif;
+        }
+
+        button,
+        input {
+            font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, \\5B8B\4F53, sans-serif;
+        }
+
+        element.style {
+            color: rgb(153, 153, 153);
+        }
+
+        .o2_mini .search-m .text {
+            width: 300px;
+        }
+
+        .search-m .text {
+            left: 0;
+            padding: 4px 44px 4px 4px;
+            width: 450px;
+            height: 25px;
+            border: 1px solid transparent;
+            line-height: 25px;
+            font-size: 14px;
+            color: #989898;
+        }
+
+        .search-m .button,
+        .search-m .text {
+            position: absolute;
+            top: 0;
+            outline: none;
+        }
+
+        button,
+        input {
+            font-family: Microsoft YaHei, tahoma, arial, Hiragino Sans GB, \\5b8b\4f53, sans-serif;
+        }
+
+        .photo-search-btn {
+            position: absolute;
+            right: 65px;
+            top: 10px;
+            width: 19px;
+            height: 15px;
+            overflow: hidden;
+        }
+
+        .photo-search-btn .upload-bg {
+            display: block;
+            width: 19px;
+            height: 15px;
+            background: url(//misc.360buyimg.com/product/search/1.0.4/css/i/sprite-photo-search.png) no-repeat;
+            cursor: pointer;
+        }
+
+        .photo-search-btn .upload-trigger {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 3;
+            width: 500px;
+            height: 500px;
+            cursor: pointer;
+            filter: alpha(opacity=0);
+            -moz-opacity: 0;
+            opacity: 0;
+        }
+
+        button,
+        input {
+            font-family: Microsoft YaHei, tahoma, arial, Hiragino Sans GB, \\5b8b\4f53, sans-serif;
+        }
+
+        button,
+        input {
+            font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, \\5B8B\4F53, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="w">
+
+
+        <div id="search">
+            <div class="search-m">
+                <div class="search_logo">
+                    <a href="" class="search_logo_lk" clstag="h|keycount|head|logo_01">京东，多快好省</a>
+                </div>
+                <ul id="shelper" style="display: none;"></ul>
+
+                <div class="form">
+                    <input clstag="h|keycount|head|search_a" type="text" autocomplete="off" id="key" accesskey="s" class="text" style="color: rgb(153, 153, 153);">
+                    <span class="photo-search-btn">
+                        <form id="search-img-upload" clstag="h|keycount|2016|03d" method="post" action="//search.jd.com/image?op=upload"
+                            enctype="multipart/form-data" target="search_upload">
+                            <span class="upload-bg"></span>
+                            <input type="file" name="file" class="upload-trigger" accept="image/png,image/jpeg,image/jpg">
+                        </form>
+                    </span>
+                    <button clstag="h|keycount|head|search_c" class="button">
+                        <i class="iconfont"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="settleup" class="dropdown" clstag="h|keycount|head|cart_null">
+            <div class="cw-icon">
+                <i class="ci-left"></i>
+                <i class="ci-right">&gt;</i>
+                <i class="ci-count" id="shopping-amount">0</i>
+                <i class="iconfont"></i>
+                <a target="_blank" href="//cart.jd.com/cart.action">我的购物车</a>
+            </div>
+            <div class="dropdown-layer">
+                <div id="J_cart_pop">
+                    <span class="loading"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

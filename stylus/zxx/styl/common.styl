@@ -1,0 +1,29 @@
+bg_color=#12ef56
+box_size=100px
+
+vendor(prop,args)
+    -webkit-{prop} args
+    -moz-{prop} args
+    -ms-{prop} args
+    {prop} args 
+
+border-radius()
+vendor('border-radius',arguments) 
+
+
+// 能不能我只写标准属性，前缀帮生成？mixin混合
+// border-radius: 这些兼容性都得写
+border-radius(n)
+    -webkit-border-radius n 
+    -moz-border-radius n 
+    border-radius n 
+
+box-shadow(n)
+    vendor('box-shadow',arguments)
+    
+.box
+    background-color: bg_color
+    width: box_size
+    height box_size
+    box-shadow(1px 1px 10px rgba(0,0,0,.5))
+    border-radius(5px)
