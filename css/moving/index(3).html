@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>电影</title>
+    <style>
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+	        margin: 0;
+	        padding: 0;
+	        border: 0;
+	        font-size: 100%;
+	        font: inherit;
+	        vertical-align: baseline;
+        }
+        a,img{
+            -webkit-tap-highlight-color: transparent;
+        }
+        body{
+            color: #494949;
+            background: #fff;
+            font-size: 13px;
+            font-family: -apple-system, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        #app{
+            padding-top: 47px; /*让出导航栏区域 因为是fixed的*/
+            padding-left: 2%;
+            padding-right: 2%;
+            max-width: 650px; /*移动端不要忘记设置*/ 
+            margin: 0 auto;
+            overflow-x: hidden; /*水平方向不要有滚动条*/
+        }
+            #app h1 {
+            font-size: 24px;
+            font-weight: normal;
+            box-sizing: border-box;
+            max-width: 660px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 6px;
+            padding-left: 4%;
+        }
+        .grid {
+            padding: 20px 0;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 660px;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        /* 自建九宫格最方便的写法 */
+        .grid .item {
+            float: left;
+            box-sizing: border-box;
+            width: 33.33333%;
+            padding-left: 4%;
+            padding-right: 4%;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        #list .item{
+            text-decoration: none;
+            color: #9b9b9b;
+        }
+        .grid .item .cover{
+            min-height: 87px;
+            overflow: hidden;
+            position: relative;
+        }
+        .grid .tatio1_1,.grid .ratio3_4{
+            position: relative;
+        }
+        /*移动端高度无法定的解决方案*/
+        .grid .ratio3_4:before{
+            content:"";
+            display: block;
+            /*形成一个正方形*/
+            /* padding-top: 100%;  */
+            padding-top: 143%;
+            background: #f00;
+        }
+        .grid .item .img-show{
+            /* display: none; */
+            /* 流不会影响 */
+            position: absolute;
+            left: -100%;
+            right: -100%;
+            top: -100%;
+            bottom: -100%;
+            margin: auto;
+            min-width: 100%;
+            min-height: 100%;
+            transition: opacity 0.3s ease-out;
+            width: 100%;
+        }
+        .grid .item .info{
+            height: 45px;
+            overflow: hidden;
+        }
+        .grid .item h3{
+            font-size: 13px;
+            font-weight: normal;
+            padding: 5px 0 0;
+            color: #494949;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 1;
+        }
+        #list p{
+            margin: 0;
+        }
+        .grid .item .rank{
+            height: 16px;
+            font-size: 12px;
+            padding-top: 3px;
+            text-align: center;
+        }
+        /*评分是网站的基础组件*/
+        .rating-stars{
+            /* span 行内，background-image inline */
+            display: inline-block;
+            vertical-align: middle;
+        }
+        /* 公共样式 */
+        .rating-stars .rating-star{
+            display: inline-block;
+            margin-right: 1px;
+            background-color: transparent;
+            background-repeat: no-repeat;
+        }
+        .rating-star-small-full,.rating-star-small-half,.rating-star-small-grey{
+            width: 10px;
+            height: 10px;
+            background-size: 10px 10px;
+        }
+        .rating-star-small-full{
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAeRJREFUOBGtlDsvBFEUx3d2djfiMbTsQ0NEwTaiQSGiRKWREDofgMJHEAqdSPSE0BC9SiEqWQWSzT4SzSbrsR7Fzo7fEXfNg9klbjI5j/s/vzn3MRMI1DFyudxaPp8/qEMa0GqJ0ul0QzgcvtM0zbAsqzMWi+X9aoJ+kzIXiUSmgLXhinZOcn6jJpDieRvA7tvSX64vMJvNdiAdV3I67c5kMkMq/s76AgHMUqTbC0Oh0II9dvvVQ0mlUs2GYbRWKpU2ij4swA3pylX0ZJrmNPn7crn8oOv6Y7FYfEgmk8+i07gOl0z24js6cUHqCU1uwbksefcfYPJCHeDFx5LpUq7DNp2GZeYPw2KrVuLx+Gp1D4GOATwEZvwGSFdv6Oe48PtSVwVKwCfWB/SEJyZxHaMAcBLYmdI6gJIEGg0Gg1e4tTqVZfawzBsFE+u5h4heyLfYRT/4LERrcs95gNwr+RI8nbsLJWa5I+68B8hbPSJ3kYq/03qAvHVYFShL7phni9hSuU/r0TqA8u9DOGArKvCZzXCKEzyL7O8o4Fs1T4ftHGKXisU6gOzfIKLIp2CnVCr1JhKJHVXAiZ4C7Ae8Ts6UPDfCsUUhJRYLrJGCa+xSNBo9ss8pH+gr/jK/tj0a2ETv2IZ35FSkS7HbzakAAAAASUVORK5CYII=);
+
+        }
+    </style>
+</head>
+<body>
+        <div id="app">
+          <h1>影院热映</h1>
+          <!-- 网站 grid 布局方式 -->
+          <section id="list" class="grid">
+            <a href="#" class="item">
+              <span class="cover">
+                <div class="wp ratio3_4">
+                  <img data-src="https://img1.doubanio.com/view/photo/m_ratio_poster/public/p2520331478.jpg" alt="" class="img-show">
+                </div>
+                <div class="info">
+                     <h3>超时空同居</h3>
+                     <p class="rank">
+                         <span class="rating-stars">
+                             <span class="rating-star rating-star-small-full"></span>
+                             <span class="rating-star rating-star-small-full"></span>
+                             <span class="rating-star rating-star-small-full"></span>
+                             <span class="rating-star rating-star-small-full"></span>
+                             <span class="rating-star rating-star-small-grey"></span>
+                             <span>7.2</span>
+                         </span>
+                     </p>
+                     <p class="rank"><span class="rating-stars"></span><span></span></p>
+                </div>
+              </span>
+            </a>
+            <a href="#" class="item">
+              <span class="cover">
+                <div class="wp ratio3_4">
+                  <img data-src="https://img1.doubanio.com/view/photo/m_ratio_poster/public/p2520331478.jpg" alt="" class="img-show">
+                </div>
+                <div class="info">
+                    <h3>超时空同居</h3>
+                    <p class="rank"><span class="rating-stars"></span><span></span></p>
+                </div>
+              </span>
+            </a>
+            <a href="#" class="item">
+              <span class="cover">
+                <div class="wp ratio3_4">
+                  <img data-src="https://img1.doubanio.com/view/photo/m_ratio_poster/public/p2520331478.jpg" alt="" class="img-show">
+                </div>
+                <div class="info">
+                    <h3>超时空同居</h3>
+                    <p class="rank"><span class="rating-stars"></span><span></span></p>
+                </div>
+              </span>
+            </a>
+            <a href="#" class="item">
+              <span class="cover">
+                <div class="wp ratio3_4">
+                  <img data-src="https://img1.doubanio.com/view/photo/m_ratio_poster/public/p2520331478.jpg" alt="" class="img-show">
+                </div>
+                <div class="info">
+                    <h3>超时空同居</h3>
+                    <p class="rank"><span class="rating-stars"></span><span></span></p>
+                </div>
+              </span>
+            </a>
+          </section>
+        </div>
+      </body>
+      <script>
+            //imgs 是一个类数组 有length属性
+            //Array.form可以将一切可枚举的对象转换成数组
+            const imgs = Array.from(document.querySelectorAll('.img-show'));
+        // imgs 为nodeList 类数组 只有length属性
+        // Array.from()
+        imgs.forEach(img => {
+            // console.log(img);
+            // 获取属性 getAttribute
+            // console.log(img.dataset.src); 兼容性不好
+            let src = img.getAttribute('data-src');
+            var oImg = document.createElement('img');
+            oImg.src = src;
+            oImg.onload = function(){
+                document.body.removeChild(this);
+                // console.log('loaded');
+                img.src = src;
+                setTimeout(()=>{
+                    img.style.opacity = 1;
+                },1000)
+            }
+            document.body.appendChild(oImg);
+        });
+      </script>
+</html>
