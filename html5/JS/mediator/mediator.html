@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>卖手机哦</title>
+</head>
+
+<body>
+    <!-- 门店 品牌 内存 颜色 数量.... =》 有货 -->
+    选择颜色
+    <select id="colorSelect">
+        <option value="">请选择</option>
+        <option value="red">红色</option>
+        <option value="blue">蓝色</option>
+        
+    </select>
+    <br/> 选择内存
+    <select id="memorySelect">
+        <option value="">请选择</option>
+        <option value="16G">16G</option>
+        <option value="32G">32G</option>
+    </select><br>
+    选择品牌
+    <select id="bandSelect">
+            <option value="">请选择</option>
+            <option value="iphone">iphone</option>
+            <option value="mi">mi</option>
+        </select>
+    <br> 输入购买数量
+    <input id="numberInput" type="text" />
+    <br/> 您选择了颜色:
+    <div id="colorInfo"></div>
+    您选择的内存:
+    <div id="memoryInfo"></div>
+    您选择了数量:
+    <div id="numberInfo"></div>
+    您选择了品牌:
+    <div id="bandInfo"></div>
+    <button id="nextBtn" disabled="true">请选择手机颜色和购买数量</button>
+    <script>
+        // 颜色 内存 品牌 一次去做check 
+        // 一个
+        // 多一个条件 得去改所有跟最后结果有关的地方
+        // 事情太多， 搞不定， 交给别人搞 中介者模式
+        const goods = {
+            "red|32G|iphone": 3,
+            "red|32G|mi": 3,
+            // "red|16G|mi": 0,
+
+            "red|16G|iphone": 0,
+            "blue|32G|mi": 1,
+            "blue|16G|iphone": 6
+        };
+
+
+
+
+
+        const mediator = (function () {
+            //   立即执行函数》闭包环境
+            const colorSelect = document.querySelector('#colorSelect'),
+                memorySelect = document.querySelector('#memorySelect'),
+                bandSelect=document.querySelector('#bandSelect'),                
+                numInput = document.querySelector('#numberInput'),
+                colorInfo = document.querySelector('#colorInfo'),
+                memoryInfo = document.querySelector('#memoryInfo'),
+                numInfo = document.querySelector('#numberInfo'),
+                nextBtn = document.querySelector('#nextBtn'),
+                bandInfo = document.querySelector('#bandInfo');
+                
+            // 所有的值
+            // 所有的check 
+            // 通过 
+            // 差异性  相应的info 值为value 
+            colorSelect.onchange = function () {
+                mediator.changed(this)
+            }
+            memorySelect.onchange = function () {
+                mediator.changed(this)
+            }
+            numInput.oninput = function () {
+                mediator.changed(this)
+            }
+            bandSelect.onchange = function () {
+                mediator.changed(this)
+            }
+
+            return {
+                // 中介者模式，让我们将复杂情况收纳至一个中介者对象，之后新的情况，新的处理，都集中在changed处
+                changed: function (obj) {
+                    // console.log(obj.value);
+                    let color = colorSelect.value,
+                        memory = memorySelect.value,
+                        number = numInput.value,
+                        band=bandSelect.value;
+                    // 再多情况，改一处地方
+                    if (obj === colorSelect) {
+                        colorInfo.innerHTML = color;
+                    } else if (obj === memorySelect) {
+                        memoryInfo.innerHTML = memory;
+                    } else if (obj === numInput) {
+                        numInfo.innerHTML = number;
+                    }else if(obj===bandSelect){
+                        bandInfo.innerHTML=band;
+                    }
+                    if (!color) {
+                        nextBtn.disabled = true;
+                        nextBtn.innerHTML = '请选择手机颜色';
+                        return;
+                    }
+                    if (!memory) {
+                        nextBtn.disabled = true;
+                        nextBtn.innerHTML = '请选择内存大小';
+                        return;
+                    }
+                    if (!Number.isInteger(parseInt(number)) || parseInt(number) <= 0) {
+
+
+                        nextBtn.disabled = true;
+                        nextBtn.innerHTML = '请输入正确手机数量';
+                        return;
+                    }
+                    if(!band){
+                        nextBtn.disabled = true;
+                        nextBtn.innerHTML = '请选择喜欢的品牌';
+                        return;
+                    }
+                    let stock = goods[`${color}|${memory}|${band}`];
+                    console.log(stock)
+                    
+                    // let stock = goods[`${color}&${memory}&${band}`];
+                    if (number > stock||stock==undefined ) {
+                        nextBtn.disabled = true;
+                        nextBtn.innerHTML = '库存不足';
+                        return; 
+
+                    }
+                    // else if(stock==undefined){
+                    //     nextBtn.disabled = true;
+                    //     nextBtn.innerHTML = '库存不足';
+                    //     return; }
+                        
+                    nextBtn.disabled = false;
+                    nextBtn.innerHTML = '放入购物车';
+                    
+                }
+            }
+        })();
+
+    </script>
+</body>
+
+</html>

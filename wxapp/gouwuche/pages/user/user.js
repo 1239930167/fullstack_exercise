@@ -1,5 +1,11 @@
 // pages/user/user.js
-Page({
+
+  Page({
+    onLoad: function() {
+    this.setData({
+    });
+  },
+
 
   /**
    * 页面的初始数据

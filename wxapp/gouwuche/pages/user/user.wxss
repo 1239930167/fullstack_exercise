@@ -10,3 +10,6 @@
     color: #fff;
     
 }
+.page__title{
+  padding: 15rpx;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用bootstrap 3进行pc网站开发</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .head {
+            background: #f0746f;
+            text-align: center;
+
+        }
+
+        .hdnav a{
+            border: 1px solid #ed3b32;
+            text-decoration: none;
+            display: inline-block;
+            padding: 1rem;
+            margin-left: 1rem;
+        }
+
+        .subhd {
+            display: inline-block;
+            float: left;
+        }
+
+        .title,.hdnav a {
+            color: white;
+        }
+        .contentpic{
+            height: 40%;
+            width: 90%;
+        }
+        .content{
+           text-align: center;
+        }
+        .nextnav a{
+            display: inline-block;
+            color: black;
+        }
+        .aside-title{
+            border-bottom: #ed3b32;
+
+        }
+        .bian{
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- cdn bootstrap bootcdn 
+    整站开发框架 css组件 js 幻灯片 面包屑（访问足迹链接） 手风琴（可伸缩界面）-->
+    <header class="head">
+        <div class="container head">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="title">为web艺术节创造的php框架</h1>
+                    <img src="" alt="">
+                </div>
+                <div class="col-xs-12 hdnav">
+                    <a href="">5.6文档</a>
+                    <a href="">5.5文档</a>
+                    <a href="">5.4文档</a>
+                    <a href="">5.3文档</a>
+                    <a href="">5.2文档</a>
+                    <a href="">5.1文档</a>
+                    <a href="">5.0文档</a>
+                    <a href="">4.2文档</a>
+                    <a href="">4.1文档</a>
+                    <a href="">4.0文档</a>
+                    <a href="">lumen文档</a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <div class="navigator">
+        <div class="container">
+            <div class="row subhd">
+                <div class="col-xs-12">
+                    <ul class="nextnav">
+                        <a>首页</a>
+                        <a>laravel</a>
+                        <a>中国镜像</a>
+                        <a>composer</a>
+                        <a>中文手册</a>
+                        <a>编程之道</a>
+                        <a>问答社区</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container">
+            <div class="row content">
+                <div class="col-xs-8 ">
+                    <article>
+                        <h4>
+                                Laravel 5.6 版本正式发布
+                        </h4>
+                        <img class="contentpic" src="https://www.golaravel.com/assets/images/laravel-5.6.png" alt="">
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    <aside>
+        
+            <div class="row bian">
+                <div class="col-xs-4">
+                    <div class="shequ">
+                        <h4 class="aside-title">
+                            社区
+                        </h4>
+                        <div class="sidecontent">
+                            QQ群
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    </aside>
+</body>
+
+</html>
