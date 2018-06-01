@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>电影</title>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   <style>
   html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -536,6 +538,7 @@ time, mark, audio, video {
     </section>
   </div>
   <script>
+   
   // NodeList 类数组 length 
   // 一切可枚举的对象转变成数组
   const imgs = Array.from(
@@ -559,6 +562,34 @@ time, mark, audio, video {
     // ie9
     // console.log(img.dataset.src);
   });
+  var dataImg={
+      "data":[
+        {"src":"index.jpg","title":"同居"},
+        {"src":"index.jpg","title":"同居"}
+        
+      ]
+    }
+  $(window).on('scroll',function(){
+            if(checkScrollSlide){
+              dataImg.data.forEach((data)=>{
+               var node = document.querySelector('.item').cloneNode(true);
+               var img=node.querySelector('.img-show');
+               var h3=node.querySelector('h3');
+               img.src=data.src;
+               h3.innerHTML=data.title;
+               var grid = document.querySelector('.grid');
+               grid.appendChild(node);
+            })
+          }
+        })
+        function checkScrollSlide(){
+            var lastItem = $('.item').last();
+            var lastItemDis = lastItem.offset().top + Math.floor(lastItem.outerHeight()/2);
+            var scrollTop = $(window).scrollTop(); 
+            var documentH = $(window).height(); 
+            return ((lastItemDis < scrollTop + documentH)?true:false);
+        }
+
   </script>
 </body>
 </html>
