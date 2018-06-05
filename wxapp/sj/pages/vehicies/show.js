@@ -9,21 +9,20 @@ Page({
   preview(event) {
     const slidesName = event.target.dataset.slides
     const index = event.target.dataset.index
-
     const slides = this.data.entity.meta[slidesName]
     const images = []
-
     slides.map((item) => {
       images.push(item.image)
     })
-
     wx.previewImage({
       urls: images,
       current: images[index]
     })
   },
   onLoad(options) {
+    console.log(options)
     const id = options.id
+    console.log(id)
     const entity = app.globalData.vehicles.filter((item) => {
       return item.id == id
     })
