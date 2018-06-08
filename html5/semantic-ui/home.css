@@ -1,0 +1,23 @@
+/* 自适应网页开发 */
+.masthead.segment {
+    min-height: 700px;
+    padding: 1em 0em;
+  }
+  .masthead .ui.menu .ui.button {
+    margin-left: 0.5em;
+  }
+
+  .secondary.pointing.menu .toc.item{
+    display: none;
+    
+  }
+  /* 小于700 样式生效 增量式 一份代码适配所以设备 */
+  @media only screen and (max-width: 750px) {  
+    .secondary.pointing.menu .toc.item{
+        display:block;
+     }
+
+    }
+    .secondary.pointing.menu .toc.item{
+
+    }
