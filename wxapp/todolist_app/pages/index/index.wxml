@@ -8,7 +8,7 @@
             <text class="userinfo-nickname">
               {{userInfo.nickName}}</text>
           </block>
-        </view>
+        </view> 
         <scroll-view class="lists" scroll-y>
           <block wx:if="{{lists.length < 1}}">
             <view class="nodata">暂无数据</view>

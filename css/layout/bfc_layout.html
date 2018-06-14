@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+    .container{
+        height: 400px;
+        width: 700px;
+        margin: 0 auto;
+    }
+    .aside{
+        float: left;
+    }
+    .red{
+        height: 401px;
+        width: 198px;
+        background: red;
+        
+    }
+    .yellow{
+        height: 201px;
+        width: 198px;
+        background: yellow;
+        display: inline-block;
+        z-index: 2;
+        overflow: hidden;
+    }
+    .blue{
+        background: blue;
+        height: 401px;
+        width: 198px;
+        float: right;
+    }
+    .center{
+        overflow: hidden;
+    }
+    .littlebox{
+        width: 25%;
+        height: 200px;
+        background-color: yellow;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="aside">
+            <div class="red">
+            </div>
+            <div class="yellow"></div>
+        </div>
+        <div class="aside2">
+            <div class="blue"></div>
+        </div>
+        <div class="center">
+            <div class="littlebox"></div>
+            <div class="littlebox"></div>
+            <div class="littlebox"></div>
+            <div class="littlebox"></div>
+            <div class="littlebox"></div>
+        </div>
+    </div>
+</body>
+</html>
