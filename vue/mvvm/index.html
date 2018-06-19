@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- vue 是mvvm
+    data-bingding 
+    template -->
+    <!-- 支持对{{}}解析，template complile
+    template->html
+    {{key}} data {name:'张二二'} 回填 
+    1 打坑 2 填值 
+-->
+    <div id="app">
+        <h3>姓名</h3>
+        <p>我的名字是:{{name}}</p>
+        <h3>年龄</h3>
+        <p>{{age}}</p>
+        <div class="msg">
+            <p>{{msg}}</p>
+        </div>
+    </div>
+    <script>
+    class Vue{
+        constructor(opt){
+            this.opt=opt;
+            this.root=document.querySelector(opt.el);
+            this.compile(this.root);
+            console.log(opt);
+        }
+        compile(node){
+            // {{.*}}
+            // 遍历结点，文本结点
+            [].forEach.call(node.childNodes,child=>{
+                // 只有{{}}才需要去做，正则
+                // 子节点下面还没有孙节点，第一个子节点
+                if(!child.firstElementChild&&/\{\{(.*)(\})\}/.test(child.innerHTML)){
+                    //console.log(RegExp.$1)//$1表示正则中（）起来的第1个分组
+                    let key=RegExp.$1.trim();
+                    child.innerHTML=child.innerHTML.replace(/\{\{(.*)(\})\}/, this.opt.data[key]);
+                }else if(child.firstElementChild){
+                    this.compile(child);
+                }
+                // console.log(child.innerHTML)
+            })
+        }
+    }
+    document.addEventListener('DOMContentLoaded',function(){
+        //快一点
+        let options={
+            el:'#app',
+            data:{
+                name:'检索中...',
+                age:30,
+                msg:'vue 高手，月薪5万'
+            
+            }
+        }
+        new Vue(options)
+    })
+
+    </script>
+</body>
+</html>
